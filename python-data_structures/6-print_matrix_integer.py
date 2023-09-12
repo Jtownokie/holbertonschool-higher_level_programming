@@ -2,11 +2,11 @@
 
 def print_matrix_integer(matrix=[[]]):
     if any(matrix):
-        for i in range(0, len(matrix)):
-            for j in range(0, len(matrix)):
-                if j < len(matrix) - 1:
-                    print("{:d}".format(matrix[i][j]), end=' ')
+        for row in matrix:
+            for j in range(len(row)):
+                if j < len(row) - 1:
+                    print("{:d}".format(row[j]), end=' ')
                 else:
-                    print("{:d}".format(matrix[i][j]))
+                    print("{:d}".format(row[j]))
     else:
         print("")
