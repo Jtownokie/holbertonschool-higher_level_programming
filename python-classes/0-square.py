@@ -2,6 +2,6 @@
 """ This is an empty class for the Python - Classes Project Task 0"""
 
 
-class square:
+class Square:
     """ This is an empty class for the Python - Classes Project Task 0"""
     pass
