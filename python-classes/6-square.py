@@ -49,6 +49,7 @@ class Square:
         """ This method prints a square of size __size"""
         if self.__size == 0:
             print("")
+            return
         if self.__position[1] > 0:
             y = 0
             while y < self.__position[1]:
