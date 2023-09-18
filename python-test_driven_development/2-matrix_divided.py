@@ -8,7 +8,11 @@ def matrix_divided(matrix, div):
     if type(matrix[0]) is list:
         length = len(matrix[0])
 
-    if all([isinstance(elem, list) for elem in matrix]) is False:
+    if isinstance(div, (int, float)) is False:
+        raise TypeError('div must be a number')
+    elif div == 0:
+        raise ZeroDivisionError('division by zero')
+    elif all([isinstance(elem, list) for elem in matrix]) is False:
         raise TypeError('matrix must be a matrix (list of lists) '
                         'of integers/floats')
     elif all([all([isinstance(elem, (int, float)) for elem in list])
@@ -18,5 +22,6 @@ def matrix_divided(matrix, div):
     elif all([len(row) == length for row in matrix]) is False:
         raise TypeError('Each row of the matrix must have the same size')
     else:
-        new_matrix = [[elem / div for elem in list] for list in matrix]
+        new_matrix = [[round((elem / div), 2) for elem in list]
+                      for list in matrix]
         return new_matrix
