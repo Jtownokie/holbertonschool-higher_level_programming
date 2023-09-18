@@ -1,0 +1,15 @@
+The ``3-say_my_name`` module
+======================
+
+Using ``say_my_name``
+-------------------
+
+This is a text file for using doctest on the above referenced module.  First import
+``say_my_name`` from the ``3-say_my_name`` module:
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Now use it:
+
+    >>> matrix_divided([[3, 6, 9], [12, 15, 18]], 3)
+    [[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
