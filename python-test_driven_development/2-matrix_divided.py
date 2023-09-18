@@ -5,13 +5,20 @@
 def matrix_divided(matrix, div):
     """ This Function divides every element of a matrix by a number """
     new_matrix = []
+    if matrix is None:
+        raise TypeError('matrix must be a matrix (list of lists) '
+                        'of integers/floats')
     if type(matrix[0]) is list:
         length = len(matrix[0])
 
-    if isinstance(div, (int, float)) is False:
+    if (isinstance(div, (int, float)) is False
+       or div != div or div == float('inf')):
         raise TypeError('div must be a number')
     elif div == 0:
         raise ZeroDivisionError('division by zero')
+    elif type(matrix) is not list:
+        raise TypeError('matrix must be a matrix (list of lists) '
+                        'of integers/floats')
     elif all([isinstance(elem, list) for elem in matrix]) is False:
         raise TypeError('matrix must be a matrix (list of lists) '
                         'of integers/floats')
