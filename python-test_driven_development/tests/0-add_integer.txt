@@ -1,0 +1,23 @@
+The ``0-add_integer`` module
+======================
+
+Using ``add_integer``
+-------------------
+
+This is a text file for using doctest on the above referenced module.  First import
+``add_integer`` from the ``0-add_integer`` module:
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Now use it:
+
+    >>> add_integer(2, 6)
+    8
+
+    >>> add_integer('2', 6)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    >>> add_integer(2, '6')
+    Traceback (most recent call last):
+    TypeError: b must be an integer
