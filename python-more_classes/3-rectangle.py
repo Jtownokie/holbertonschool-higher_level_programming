@@ -16,6 +16,9 @@ class Rectangle:
         string_rep += '\n'
         return string_rep
 
+    def __repr__(self):
+        return f'Rectangle({self.__width}, {self.__height})'
+
     @property
     def width(self):
         """ Private Attribute: Width - Getter """
