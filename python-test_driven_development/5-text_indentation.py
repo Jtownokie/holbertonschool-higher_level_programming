@@ -20,5 +20,5 @@ def text_indentation(text):
         if final_text[i] == '.' and final_text[i + 1] != '\n':
             print(final_text[i], end="")
             print("\n")
-            i += 1
+            continue
         print(final_text[i], end="")
