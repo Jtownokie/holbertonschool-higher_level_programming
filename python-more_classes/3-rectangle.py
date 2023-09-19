@@ -9,7 +9,6 @@ class Rectangle:
         self.height = height
 
     def __str__(self):
-        """ __str__ method for print() and str() """
         string_rep = ""
         for i in range(self.__height):
             for j in range(self.__width):
@@ -56,16 +55,3 @@ class Rectangle:
             return 0
         else:
             return (self.__width + self.__height) * 2
-
-my_rectangle = Rectangle(2, 4)
-print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
-
-print(str(my_rectangle))
-print(repr(my_rectangle))
-
-print("--")
-
-my_rectangle.width = 10
-my_rectangle.height = 3
-print(my_rectangle)
-print(repr(my_rectangle))
