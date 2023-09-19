@@ -12,4 +12,4 @@ def text_indentation(text):
     text3 = text2.replace('? ', '?\n\n')
     final_text = text3.replace(': ', ':\n\n')
 
-    print(final_text)
+    print(final_text, end="")
