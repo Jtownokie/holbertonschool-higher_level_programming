@@ -11,4 +11,12 @@ def text_indentation(text):
     text2 = text1.replace('? ', '?\n\n')
     final_text = text2.replace(': ', ':\n\n')
 
-    print(final_text, end="")
+    for i in range(len(final_text)):
+        if final_text[i] == ' ' and final_text[i + 1] == ' ':
+            continue
+        if final_text[i] == ' ' and final_text[i - 1] == ' ' and final_text[i + 1] != ' ':
+            continue
+        if final_text[i] == '.' and final_text[i + 1] != '\n':
+            print('.', end="")
+            print("\n")
+        print(final_text[i], end="")
