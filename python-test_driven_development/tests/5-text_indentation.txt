@@ -11,10 +11,10 @@ This is a text file for using doctest on the above referenced module.  First imp
 
 Now use it:
 
-    >>> text_indentation("Thou shalt fetch me a shrubbery. For we are the Knights Who Say Ni?")
+    >>> text_indentation("Thou shalt fetch me a shrubbery. For we are the Knights Who Say Ni")
     Thou shalt fetch me a shrubbery.
     <BLANKLINE>
-    For we are the Knights Who Say Ni?
+    For we are the Knights Who Say Ni
 
     >>> text_indentation(4)
     Traceback (most recent call last):

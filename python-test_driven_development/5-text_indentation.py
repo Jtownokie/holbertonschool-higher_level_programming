@@ -12,3 +12,6 @@ def text_indentation(text):
     final_text = text2.replace(': ', ':\n\n')
 
     print(final_text, end="")
+
+
+text_indentation("Thou shalt fetch me a shrubbery. For we are the Knights Who Say Ni?")
