@@ -1,15 +1,25 @@
-The ``3-say_my_name`` module
+The ``5-text_indentation`` module
 ======================
 
-Using ``say_my_name``
+Using ``text_indentation``
 -------------------
 
 This is a text file for using doctest on the above referenced module.  First import
-``say_my_name`` from the ``3-say_my_name`` module:
+``text_indentation`` from the ``5-text_indentation`` module:
 
-    >>> say_my_name = __import__('3-say_my_name').say_my_name
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
 
 Now use it:
 
-    >>> matrix_divided([[3, 6, 9], [12, 15, 18]], 3)
-    [[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
+    >>> text_indentation("Thou shalt fetch me a shrubbery. For we are the Knights Who Say Ni?")
+    Thou shalt fetch me a shrubbery.
+    <BLANKLINE>
+    For we are the Knights Who Say Ni?
+
+    >>> text_indentation(4)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    >>> text_indentation()
+    Traceback (most recent call last):
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
