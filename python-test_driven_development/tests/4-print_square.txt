@@ -1,15 +1,34 @@
-The ``3-say_my_name`` module
+The ``4-print_square`` module
 ======================
 
-Using ``say_my_name``
+Using ``print_square``
 -------------------
 
 This is a text file for using doctest on the above referenced module.  First import
-``say_my_name`` from the ``3-say_my_name`` module:
+``print_square`` from the ``4-print_square`` module:
 
-    >>> say_my_name = __import__('3-say_my_name').say_my_name
+    >>> print_square = __import__('4-print_square').print_square
 
 Now use it:
 
-    >>> matrix_divided([[3, 6, 9], [12, 15, 18]], 3)
-    [[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
+    >>> print_square(4)
+    ####
+    ####
+    ####
+    ####
+
+    >>> print_square('4')
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+    >>> print_square(4.00)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+    >>> print_square(-4)
+    Traceback (most recent call last):
+    ValueError: size must be >= 0
+
+    >>> print_square(-4.00)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
