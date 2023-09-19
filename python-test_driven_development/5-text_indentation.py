@@ -8,8 +8,7 @@ def text_indentation(text):
         raise TypeError('text must be a string')
 
     text1 = text.replace('. ', '.\n\n')
-    text2 = text1.replace('.', '.\n\n')
-    text3 = text2.replace('? ', '?\n\n')
-    final_text = text3.replace(': ', ':\n\n')
+    text2 = text1.replace('? ', '?\n\n')
+    final_text = text2.replace(': ', ':\n\n')
 
     print(final_text, end="")
