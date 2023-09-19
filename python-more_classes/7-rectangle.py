@@ -1,0 +1,71 @@
+#!/usr/bin/python3
+""" This is a module defining a Class called Rectangle """
+
+
+class Rectangle:
+    """ This is a Class called Rectangle """
+    number_of_instances = 0
+    print_symbol = "#"
+
+    def __init__(self, width=0, height=0):
+        self.width = width
+        self.height = height
+        type(self).number_of_instances += 1
+
+    def __str__(self):
+        string_rep = ""
+        if self.__width == 0 or self.__height == 0:
+            return string_rep
+        for i in range(self.__height):
+            for j in range(self.__width):
+                string_rep += str(self.print_symbol)
+            if i != (self.__height - 1) and j != self.__width:
+                string_rep += '\n'
+        return string_rep
+
+    def __repr__(self):
+        repr_string = f"Rectangle({self.__width}, {self.__height})"
+        return repr_string
+
+    def __del__(self):
+        type(self).number_of_instances -= 1
+        print("Bye rectangle...")
+
+    @property
+    def width(self):
+        """ Private Attribute: Width - Getter """
+        return self.__width
+
+    @width.setter
+    def width(self, value):
+        """ Private Attribute: Width - Setter """
+        if type(value) is not int:
+            raise TypeError('width must be an integer')
+        elif value < 0:
+            raise ValueError('width must be >= 0')
+        self.__width = value
+
+    @property
+    def height(self):
+        """ Private Attribute: Height - Getter """
+        return self.__height
+
+    @height.setter
+    def height(self, value):
+        """ Private Attribute: Height - Setter """
+        if type(value) is not int:
+            raise TypeError('height must be an integer')
+        elif value < 0:
+            raise ValueError('height must be >= 0')
+        self.__height = value
+
+    def area(self):
+        """ This method returns the area of an instance Rectangle """
+        return self.__width * self.__height
+
+    def perimeter(self):
+        """ This method returns the perimeter of an instance Rectangle """
+        if self.__width == 0 or self.__height == 0:
+            return 0
+        else:
+            return (self.__width + self.__height) * 2
