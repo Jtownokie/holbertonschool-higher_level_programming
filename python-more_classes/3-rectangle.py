@@ -54,7 +54,3 @@ class Rectangle:
             return 0
         else:
             return (self.__width + self.__height) * 2
-
-my_rectangle = Rectangle(2, 4)
-print(str(my_rectangle))
-print(repr(my_rectangle))
