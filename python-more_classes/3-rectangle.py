@@ -9,6 +9,7 @@ class Rectangle:
         self.height = height
 
     def __str__(self):
+        """ ___str___ method for Rectangle Class """
         string_rep = ""
         for i in range(self.__height):
             for j in range(self.__width):
