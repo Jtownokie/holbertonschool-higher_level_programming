@@ -10,6 +10,8 @@ class Rectangle:
 
     def __str__(self):
         string_rep = ""
+        if self.__width == 0 or self.__height == 0:
+            return string_rep
         for i in range(self.__height):
             for j in range(self.__width):
                 string_rep += '#'
