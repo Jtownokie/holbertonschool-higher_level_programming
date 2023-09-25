@@ -58,7 +58,7 @@ Now use it:
 
     >>> bg.integer_validator(None, 1)
 
-    >>> bg.integer_validator("name", 5j)
+    >>> bg.integer_validator("name", 2j)
     Traceback (most recent call last):
     TypeError: name must be an integer
 
@@ -105,3 +105,5 @@ Now use it:
     >>> bg.integer_validator("name", True)
     Traceback (most recent call last):
     TypeError: name must be an integer
+
+    >>> bg.integer_validator(25, 25)
