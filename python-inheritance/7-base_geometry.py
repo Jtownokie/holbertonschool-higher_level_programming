@@ -3,9 +3,9 @@
 
 
 class BaseGeometry:
-    """ This is the BaseGeomety Class """
+    """ This is the BaseGeometry Class """
     def area(self):
-        """ This is a placeholder method """
+        """ This method is not implemented """
         raise Exception('area() is not implemented')
 
     def integer_validator(self, name, value):
