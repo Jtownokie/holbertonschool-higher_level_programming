@@ -11,6 +11,15 @@ This is a text file for using doctest on the above referenced module.  First imp
 
 Now use it:
 
+    >>> bg = BaseGeometry("String")
+    Traceback (most recent call last):
+    TypeError: BaseGeometry() takes no arguments
+
+    >>> bg = BaseGeometry()
+    >>> bg.area("String")
+    Traceback (most recent call last):
+    TypeError: area() takes 1 positional argument but 2 were given
+
     >>> bg = BaseGeometry()
     >>> bg.area()
     Traceback (most recent call last):
