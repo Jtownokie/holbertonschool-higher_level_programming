@@ -2,7 +2,7 @@ The ``7-base_geometry`` module
 ======================
 
 Using ``BaseGeometry & integer_validator``
--------------------
+======================
 
 This is a text file for using doctest on the above referenced module.  First import
 ``BaseGeometry & integer_validator`` from the ``7-base_geometry`` module:
