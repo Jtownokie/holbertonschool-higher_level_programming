@@ -5,4 +5,9 @@
 def write_file(filename="", text=""):
     """ This function opens and writes to a file """
     with open(filename, 'w+', encoding="utf-8") as f:
-        f.write(text)
+        charsprinted = f.write(text)
+
+    return charsprinted
+
+nb_characters = write_file("my_first_file.txt", "This School is so cool!\n")
+print(nb_characters)
