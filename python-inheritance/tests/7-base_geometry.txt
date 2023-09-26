@@ -31,6 +31,7 @@ Now use it:
 
     >>> bg = BaseGeometry()
     >>> bg.integer_validator("my_int", 12)
+    True
 
     >>> bg = BaseGeometry()
     >>> bg.integer_validator("name", "John")
@@ -69,6 +70,7 @@ Now use it:
 
     >>> bg = BaseGeometry()
     >>> bg.integer_validator(None, 1)
+    True
 
     >>> bg = BaseGeometry()
     >>> bg.integer_validator("name", 2j)
@@ -132,3 +134,9 @@ Now use it:
 
     >>> bg = BaseGeometry()
     >>> bg.integer_validator(25, 25)
+    True
+
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("my_int", 5, "Bob")
+    Traceback (most recent call last):
+    TypeError: integer_validator() takes 3 positional arguments but 4 were given
