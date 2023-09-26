@@ -15,6 +15,10 @@ Now use it:
     Traceback (most recent call last):
     TypeError: BaseGeometry() takes no arguments
 
+    >>> bg = BaseGeometry(None)
+    Traceback (most recent call last):
+    TypeError: BaseGeometry() takes no arguments
+
     >>> bg = BaseGeometry()
     >>> bg.area("String")
     Traceback (most recent call last):
