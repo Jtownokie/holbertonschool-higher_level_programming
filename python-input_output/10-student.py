@@ -14,7 +14,7 @@ class Student:
             referred to by 'attrs' """
         new_dict = {}
 
-        if type(attrs) is not list or attrs == None:
+        if type(attrs) is not list or attrs is None:
             return self.__dict__
         else:
             for element in attrs:
