@@ -5,8 +5,8 @@ import json
 
 
 def load_from_json_file(filename):
-    """ This function converts 'my_obj' into a
-        JSON representation and writes it to a file """
+    """ This function converts a JSON representation
+        into an object """
     with open(filename, 'r', encoding="utf-8") as f:
         new_object = json.load(f)
     return new_object
