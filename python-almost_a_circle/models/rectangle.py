@@ -8,6 +8,7 @@ class Rectangle(Base):
     """ This Class is a subclass of 'Base' that defines attributes and
         methods of a Rectangle object """
     def __init__(self, width, height, x=0, y=0, id=None):
+        """ This is the __init__ method for the Rectangle Class """
         super().__init__(id)
         self.width = width
         self.height = height
