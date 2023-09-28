@@ -52,4 +52,4 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """ Private Attribute '__y' Setter """
-        self.__x = value
+        self.__y = value
