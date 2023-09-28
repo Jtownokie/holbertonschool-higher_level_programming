@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ This Module contains the Class 'Rectangle' which is a subclass of
     'Base' """
-from base import Base
+from models.base import Base
 
 
 class Rectangle(Base):
@@ -54,3 +54,12 @@ class Rectangle(Base):
     def y(self, value):
         """ Private Attribute '__y' Setter """
         self.__y = value
+
+r1 = Rectangle(10, 2)
+print(r1.id)
+
+r2 = Rectangle(2, 10)
+print(r2.id)
+
+r3 = Rectangle(10, 2, 0, 0, 12)
+print(r3.id)
