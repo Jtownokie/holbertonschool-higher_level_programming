@@ -33,20 +33,35 @@ class Rectangle(Base):
                 print('#', end='')
             print('')
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ This method takes a variable
             argument list and updates attributes """
-        for arg in args:
-            if arg is args[0]:
-                self.id = arg
-            elif arg is args[1]:
-                self.width = arg
-            elif arg is args[2]:
-                self.height = arg
-            elif arg is args[3]:
-                self.x = arg
-            elif arg is args[4]:
-                self.y = arg
+        if args:
+            for arg in args:
+                if arg is args[0]:
+                    self.id = arg
+                elif arg is args[1]:
+                    self.width = arg
+                elif arg is args[2]:
+                    self.height = arg
+                elif arg is args[3]:
+                    self.x = arg
+                elif arg is args[4]:
+                    self.y = arg
+        else:
+            allowed_keys = {'id', 'width', 'height', 'x', 'y'}
+            for key, value in kwargs.items():
+                if key in allowed_keys:
+                    if key == 'id':
+                        self.id = value
+                    elif key == 'width':
+                        self.width = value
+                    elif key == 'height':
+                        self.height = value
+                    elif key == 'x':
+                        self.x = value
+                    elif key == 'y':
+                        self.y = value
 
     @property
     def width(self):
