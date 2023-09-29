@@ -7,7 +7,6 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """ This is the __init__ method for the Base Class """
         if id is not None:
             self.id = id
         else:

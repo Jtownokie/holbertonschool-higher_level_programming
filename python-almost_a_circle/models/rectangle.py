@@ -14,6 +14,10 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
+    def __str__(self):
+        return (f"[{self.__class__.__name__}] ({self.id}) "
+                f"{self.__x}/{self.__y} - {self.__width}/{self.__height}")
+
     def area(self):
         """ This method returns the area of a Rectangle object """
         return self.__width * self.__height
