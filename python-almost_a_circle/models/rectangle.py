@@ -34,7 +34,7 @@ class Rectangle(Base):
             print('')
 
     def update(self, *args):
-        """ This method takes a variable 
+        """ This method takes a variable
             argument list and updates attributes """
         for arg in args:
             if arg is args[0]:
