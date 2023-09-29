@@ -48,3 +48,10 @@ class Base:
 
         with open(f"{cls.__name__}.json", "w+", encoding="utf-8") as f:
             f.write(json_list)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """ This method returns an instance with all attributes set """
+        temp_instance = cls(1, 1)
+        temp_instance.update(**dictionary)
+        return temp_instance
