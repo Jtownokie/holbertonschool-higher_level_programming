@@ -25,7 +25,6 @@ class Rectangle(Base):
                 print('#', end='')
             print('')
 
-
     @property
     def width(self):
         """ Private Attribute '__width' Getter """
