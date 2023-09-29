@@ -22,8 +22,18 @@ class Base:
         else:
             return json.dumps(list_dictionaries)
 
+    @staticmethod
+    def from_json_string(json_string):
+        """ This Method converts a JSON string into a list object """
+        if json_string is None or json_string == '':
+            return []
+        else:
+            return json.loads(json_string)
+
     @classmethod
     def save_to_file(cls, list_objs):
+        """ This Method converts a list of instances into
+            a JSON string and saves them to a file """
         if list_objs is None:
             with open(f"{cls.__name__}.json", "w+", encoding="utf-8") as f:
                 json.dump([], f)
@@ -37,4 +47,4 @@ class Base:
         json_list = Base.to_json_string(list_of_dicts)
 
         with open(f"{cls.__name__}.json", "w+", encoding="utf-8") as f:
-                f.write(json_list)
+            f.write(json_list)
