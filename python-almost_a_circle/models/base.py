@@ -24,6 +24,11 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
+        if list_objs is None:
+            with open(f"{cls.__name__}.json", "w+", encoding="utf-8") as f:
+                json.dump([], f)
+                return
+
         list_of_dicts = []
         for instance in list_objs:
             instance_dict = cls.to_dictionary(instance)
@@ -32,7 +37,4 @@ class Base:
         json_list = Base.to_json_string(list_of_dicts)
 
         with open(f"{cls.__name__}.json", "w+", encoding="utf-8") as f:
-            if list_objs is None:
-                json.dump([], f)
-            else:
                 f.write(json_list)
