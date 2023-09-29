@@ -40,6 +40,10 @@ class Square(Rectangle):
                     elif key == 'y':
                         self.y = value
 
+    def to_dictionary(self):
+        """ This method returns the attributes of an instance as a dict """
+        return {'id': self.id, 'x': self.x, 'size': self.size, 'y': self.y}
+
     @property
     def size(self):
         """ Private Attribute '__width' Getter """
