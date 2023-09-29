@@ -35,8 +35,8 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """ This method returns the attributes of an instance as a dict """
-        return ({'x': self.x, 'y': self.y, 'id': self.id,
-                'height': self.height, 'width': self.width})
+        return ({'y': self.y, 'x': self.x, 'id': self.id,
+                'width': self.width, 'height': self.height})
 
     def update(self, *args, **kwargs):
         """ This method takes a variable
