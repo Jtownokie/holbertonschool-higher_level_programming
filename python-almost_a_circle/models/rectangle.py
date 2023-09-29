@@ -33,6 +33,21 @@ class Rectangle(Base):
                 print('#', end='')
             print('')
 
+    def update(self, *args):
+        """ This method takes a variable 
+            argument list and updates attributes """
+        for arg in args:
+            if arg is args[0]:
+                self.id = arg
+            elif arg is args[1]:
+                self.width = arg
+            elif arg is args[2]:
+                self.height = arg
+            elif arg is args[3]:
+                self.x = arg
+            elif arg is args[4]:
+                self.y = arg
+
     @property
     def width(self):
         """ Private Attribute '__width' Getter """
