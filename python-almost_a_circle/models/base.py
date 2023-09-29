@@ -35,4 +35,4 @@ class Base:
             if list_objs is None:
                 json.dump([], f)
             else:
-                json.dump(json_list, f)
+                f.write(json_list)
