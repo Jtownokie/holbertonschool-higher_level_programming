@@ -18,6 +18,14 @@ class Rectangle(Base):
         """ This method returns the area of a Rectangle object """
         return self.__width * self.__height
 
+    def display(self):
+        """ This method prints a square to stdout with # """
+        for i in range(self.__height):
+            for j in range(self.__width):
+                print('#', end='')
+            print('')
+
+
     @property
     def width(self):
         """ Private Attribute '__width' Getter """
