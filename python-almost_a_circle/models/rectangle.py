@@ -33,6 +33,11 @@ class Rectangle(Base):
                 print('#', end='')
             print('')
 
+    def to_dictionary(self):
+        """ This method returns the attributes of an instance as a dict """
+        return ({'x': self.x, 'y': self.y, 'id': self.id,
+                'height': self.height, 'width': self.width})
+
     def update(self, *args, **kwargs):
         """ This method takes a variable
             argument list and updates attributes """
