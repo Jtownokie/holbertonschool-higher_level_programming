@@ -14,6 +14,32 @@ class Square(Rectangle):
         return (f"[{self.__class__.__name__}] ({self.id}) "
                 f"{self.x}/{self.y} - {self.width}")
 
+    def update(self, *args, **kwargs):
+        """ This method takes a variable
+            argument list and updates attributes """
+        if args:
+            for arg in args:
+                if arg is args[0]:
+                    self.id = arg
+                elif arg is args[1]:
+                    self.size = arg
+                elif arg is args[2]:
+                    self.x = arg
+                elif arg is args[3]:
+                    self.y = arg
+        else:
+            allowed_keys = {'id', 'size', 'x', 'y'}
+            for key, value in kwargs.items():
+                if key in allowed_keys:
+                    if key == 'id':
+                        self.id = value
+                    elif key == 'size':
+                        self.size = value
+                    elif key == 'x':
+                        self.x = value
+                    elif key == 'y':
+                        self.y = value
+
     @property
     def size(self):
         """ Private Attribute '__width' Getter """
