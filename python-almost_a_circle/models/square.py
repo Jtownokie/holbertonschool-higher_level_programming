@@ -42,7 +42,7 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """ This method returns the attributes of an instance as a dict """
-        return {'id': self.id, 'x': self.x, 'size': self.size, 'y': self.y}
+        return {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
 
     @property
     def size(self):

@@ -52,7 +52,7 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """ This method returns an instance with all attributes set """
-        temp_instance = cls(1, 1)
+        temp_instance = cls(1, 1, 1)
         temp_instance.update(**dictionary)
         return temp_instance
 
