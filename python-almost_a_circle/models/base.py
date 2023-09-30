@@ -55,3 +55,18 @@ class Base:
         temp_instance = cls(1, 1)
         temp_instance.update(**dictionary)
         return temp_instance
+
+    @classmethod
+    def load_from_file(cls):
+        """ This method returns a list of newly created instances """
+        filename = f"{cls.__name__}.json"
+        try:
+            instance_list = []
+            with open(filename, "r", encoding="utf-8") as f:
+                json_string = f.read()
+                dict_list = Base.from_json_string(json_string)
+                for dict in dict_list:
+                    instance_list.append(cls.create(**dict))
+                return instance_list
+        except Exception:
+            return []
