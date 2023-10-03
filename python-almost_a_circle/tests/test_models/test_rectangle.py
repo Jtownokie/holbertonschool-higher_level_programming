@@ -174,6 +174,10 @@ class TestAreaMethod(unittest.TestCase):
 class TestDisplayMethod(unittest.TestCase):
     """ This test case tests the 'display' method """
 
+    def test_standard_use(self):
+        r1 = Rectangle(2, 4, 2, 2)
+        self.assertEqual(r1.display(), None)
+
     def test_incorrect_arg_num(self):
         r1 = Rectangle(2, 4)
         with self.assertRaises(TypeError) as e:
@@ -182,3 +186,12 @@ class TestDisplayMethod(unittest.TestCase):
     def test_no_instance_call(self):
         with self.assertRaises(TypeError) as e:
             Rectangle.display()
+
+
+class TestStrOverride(unittest.TestCase):
+    """ This test case tests the '__str__' magic method """
+
+    def test_standard_use(self):
+        Base._Base__nb_objects = 0
+        r1 = Rectangle(2, 1, 3, 4, 12)
+        self.assertEqual(str(r1), '[Rectangle] (12) 3/4 - 2/1')
