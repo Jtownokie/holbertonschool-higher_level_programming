@@ -9,7 +9,6 @@ from models.square import Square
 class TestBaseInit(unittest.TestCase):
     """ Test Class for Base __init__ method instantiation """
 
-
     def test_new_instance_id_none(self):
         b1 = Base()
         b2 = Base()
@@ -30,6 +29,7 @@ class TestBaseInit(unittest.TestCase):
     #     b1 = Base()
     #     self.assertEqual(b1._Base__nb_objects, 1)
 
+
 class TestToJsonString(unittest.TestCase):
     """ Test Class for Base method 'to_json_string' """
 
@@ -39,15 +39,16 @@ class TestToJsonString(unittest.TestCase):
 
     def test_standard_use(self):
         sample_dict = [
-        {'one': 1, 'two': 2, 'three': 3}, 
-        {'four': 4, 'five': 5, 'six': 6}
+            {'one': 1, 'two': 2, 'three': 3},
+            {'four': 4, 'five': 5, 'six': 6}
         ]
         self.assertEqual(Base.to_json_string(sample_dict),
-                        '[{"one": 1, "two": 2, "three": 3},'
-                        ' {"four": 4, "five": 5, "six": 6}]')
+                         '[{"one": 1, "two": 2, "three": 3},'
+                         ' {"four": 4, "five": 5, "six": 6}]')
 
     def test_wrong_argument_type(self):
         pass
+
 
 class TestFromJsonString(unittest.TestCase):
     """ Test Class for Base method 'from_json_string' """
@@ -60,6 +61,7 @@ class TestFromJsonString(unittest.TestCase):
 
     def test_wrong_argument_type(self):
         pass
+
 
 class TestSaveToFile(unittest.TestCase):
     """ Test Class for Base __init__ method instantiation """
@@ -76,6 +78,7 @@ class TestSaveToFile(unittest.TestCase):
     def test_file_open_fail(self):
         pass
 
+
 class TestCreate(unittest.TestCase):
     """ Test Class for Base __init__ method instantiation """
 
@@ -84,6 +87,7 @@ class TestCreate(unittest.TestCase):
 
     def test_wrong_argument_type(self):
         pass
+
 
 class TestLoadFromFile(unittest.TestCase):
     """ Test Class for Base __init__ method instantiation """
