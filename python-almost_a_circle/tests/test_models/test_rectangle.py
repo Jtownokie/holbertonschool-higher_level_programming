@@ -35,63 +35,112 @@ class TestRectangleWidth(unittest.TestCase):
         r1 = Rectangle(1, 1)
         self.assertEqual(r1.width, 1)
 
-    # def test_width_zero(self):
-    #     with self.assertRaises(ValueError) as e:
-    #         r1 = Rectangle(0, 1)
+    def test_width_zero(self):
+        with self.assertRaises(ValueError) as e:
+            r1 = Rectangle(0, 1)
 
     def test_width_negative(self):
-        pass
+        with self.assertRaises(ValueError) as e:
+            r1 = Rectangle(-1, 1)
 
     def test_wrong_data_type(self):
-        pass
+        with self.assertRaises(TypeError) as e:
+            r1 = Rectangle('1', 1)
+        with self.assertRaises(TypeError) as e:
+            r1 = Rectangle(2.50, 1)
+        with self.assertRaises(TypeError) as e:
+            r1 = Rectangle([], 1)
+        with self.assertRaises(TypeError) as e:
+            r1 = Rectangle((1, 2), 1)
+        with self.assertRaises(TypeError) as e:
+            r1 = Rectangle(True, 1)
 
 
 class TestRectangleHeight(unittest.TestCase):
     """ This Test Case runs tests on the 'Height' Attribute """
 
     def test_setter(self):
-        pass
+        r1 = Rectangle(1, 1)
+        r1.height = 2
+        self.assertEqual(r1.height, 2)
 
     def test_getter(self):
-        pass
+        r1 = Rectangle(1, 1)
+        self.assertEqual(r1.height, 1)
 
     def test_height_zero(self):
-        pass
+        with self.assertRaises(ValueError) as e:
+            r1 = Rectangle(1, 0)
 
     def test_height_negative(self):
-        pass
+        with self.assertRaises(ValueError) as e:
+            r1 = Rectangle(1, -1)
 
     def test_wrong_data_type(self):
-        pass
-
+        with self.assertRaises(TypeError) as e:
+            r1 = Rectangle(1, '1')
+        with self.assertRaises(TypeError) as e:
+            r1 = Rectangle(1, 2.50)
+        with self.assertRaises(TypeError) as e:
+            r1 = Rectangle(1, [])
+        with self.assertRaises(TypeError) as e:
+            r1 = Rectangle(1, (1, 2))
+        with self.assertRaises(TypeError) as e:
+            r1 = Rectangle(1, True)
 
 class TestRectangleX(unittest.TestCase):
     """ This Test Case runs tests on the 'X' Attribute """
 
     def test_setter(self):
-        pass
+        r1 = Rectangle(1, 1)
+        r1.x = 2
+        self.assertEqual(r1.x, 2)
 
     def test_getter(self):
-        pass
+        r1 = Rectangle(1, 1, 1, 1)
+        self.assertEqual(r1.x, 1)
 
     def test_x_negative(self):
-        pass
+        with self.assertRaises(ValueError) as e:
+            r1 = Rectangle(1, 1, -1, 1)
 
     def test_wrong_data_type(self):
-        pass
+        with self.assertRaises(TypeError) as e:
+            r1 = Rectangle(1, 1, '1', 1)
+        with self.assertRaises(TypeError) as e:
+            r1 = Rectangle(1, 1, 2.50, 1)
+        with self.assertRaises(TypeError) as e:
+            r1 = Rectangle(1, 1, [], 1)
+        with self.assertRaises(TypeError) as e:
+            r1 = Rectangle(1, 1, (1, 2), 1)
+        with self.assertRaises(TypeError) as e:
+            r1 = Rectangle(1, 1, True, 1)
 
 
 class TestRectangleY(unittest.TestCase):
     """ This Test Case runs tests on the 'Y' Attribute """
 
     def test_setter(self):
-        pass
+        r1 = Rectangle(1, 1)
+        r1.y = 2
+        self.assertEqual(r1.y, 2)
 
     def test_getter(self):
-        pass
+        r1 = Rectangle(1, 1, 1, 1)
+        self.assertEqual(r1.y, 1)
 
     def test_y_negative(self):
-        pass
+        with self.assertRaises(ValueError) as e:
+            r1 = Rectangle(1, 1, 1, -1)
 
     def test_wrong_data_type(self):
-        pass
+        with self.assertRaises(TypeError) as e:
+            r1 = Rectangle(1, 1, 1, '1')
+        with self.assertRaises(TypeError) as e:
+            r1 = Rectangle(1, 1, 1, 2.50)
+        with self.assertRaises(TypeError) as e:
+            r1 = Rectangle(1, 1, 1, [])
+        with self.assertRaises(TypeError) as e:
+            r1 = Rectangle(1, 1, 1, (1, 2))
+        with self.assertRaises(TypeError) as e:
+            r1 = Rectangle(1, 1, 1, True)
