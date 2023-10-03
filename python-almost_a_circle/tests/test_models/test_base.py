@@ -9,6 +9,9 @@ from models.square import Square
 class TestBaseInit(unittest.TestCase):
     """ Test Class for Base __init__ method instantiation """
 
+    def setUp(self):
+        Base._Base__nb_objects = 0
+
     def test_new_instance_id_none(self):
         b1 = Base()
         b2 = Base()
@@ -25,9 +28,9 @@ class TestBaseInit(unittest.TestCase):
         self.assertEqual(b2.id, 4)
         self.assertEqual(b3.id, 30)
 
-    # def test_nb_objects(self):
-    #     b1 = Base()
-    #     self.assertEqual(b1._Base__nb_objects, 1)
+    def test_nb_objects(self):
+        b1 = Base()
+        self.assertEqual(b1._Base__nb_objects, 1)
 
 
 class TestToJsonString(unittest.TestCase):
@@ -45,9 +48,6 @@ class TestToJsonString(unittest.TestCase):
         self.assertEqual(Base.to_json_string(sample_dict),
                          '[{"one": 1, "two": 2, "three": 3},'
                          ' {"four": 4, "five": 5, "six": 6}]')
-
-    def test_wrong_argument_type(self):
-        pass
 
 
 class TestFromJsonString(unittest.TestCase):
