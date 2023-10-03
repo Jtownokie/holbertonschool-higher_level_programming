@@ -152,3 +152,33 @@ class TestRectangleY(unittest.TestCase):
             r1 = Rectangle(1, 1, 1, True)
         with self.assertRaises(TypeError) as e:
             r1 = Rectangle(1, 1, 1, None)
+
+
+class TestAreaMethod(unittest.TestCase):
+    """ This test case tests the 'area' method """
+
+    def test_standard_use(self):
+        r1 = Rectangle(2, 4)
+        self.assertEqual(r1.area(), 8)
+
+    def test_incorrect_arg_num(self):
+        r1 = Rectangle(2, 4)
+        with self.assertRaises(TypeError) as e:
+            r1.area(2)
+
+    def test_no_instance_call(self):
+        with self.assertRaises(TypeError) as e:
+            Rectangle.area()
+
+
+class TestDisplayMethod(unittest.TestCase):
+    """ This test case tests the 'display' method """
+
+    def test_incorrect_arg_num(self):
+        r1 = Rectangle(2, 4)
+        with self.assertRaises(TypeError) as e:
+            r1.display(2)
+
+    def test_no_instance_call(self):
+        with self.assertRaises(TypeError) as e:
+            Rectangle.display()
