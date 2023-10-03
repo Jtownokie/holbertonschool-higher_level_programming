@@ -54,6 +54,8 @@ class TestRectangleWidth(unittest.TestCase):
             r1 = Rectangle((1, 2), 1)
         with self.assertRaises(TypeError) as e:
             r1 = Rectangle(True, 1)
+        with self.assertRaises(TypeError) as e:
+            r1 = Rectangle(None, 1)
 
 
 class TestRectangleHeight(unittest.TestCase):
@@ -87,6 +89,8 @@ class TestRectangleHeight(unittest.TestCase):
             r1 = Rectangle(1, (1, 2))
         with self.assertRaises(TypeError) as e:
             r1 = Rectangle(1, True)
+        with self.assertRaises(TypeError) as e:
+            r1 = Rectangle(1, None)
 
 class TestRectangleX(unittest.TestCase):
     """ This Test Case runs tests on the 'X' Attribute """
@@ -115,6 +119,8 @@ class TestRectangleX(unittest.TestCase):
             r1 = Rectangle(1, 1, (1, 2), 1)
         with self.assertRaises(TypeError) as e:
             r1 = Rectangle(1, 1, True, 1)
+        with self.assertRaises(TypeError) as e:
+            r1 = Rectangle(1, 1, None, 1)
 
 
 class TestRectangleY(unittest.TestCase):
@@ -144,3 +150,5 @@ class TestRectangleY(unittest.TestCase):
             r1 = Rectangle(1, 1, 1, (1, 2))
         with self.assertRaises(TypeError) as e:
             r1 = Rectangle(1, 1, 1, True)
+        with self.assertRaises(TypeError) as e:
+            r1 = Rectangle(1, 1, 1, None)
