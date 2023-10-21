@@ -1,3 +1,2 @@
 -- Computes average of all records
-ALTER TABLE second_table ADD average INT;
-UPDATE second_table SET average = (SELECT AVG(score) FROM second_table);
+SELECT AVG(score) AS average FROM hbtn_0c_0.second_table;
