@@ -10,13 +10,16 @@ if __name__ == "__main__":
                            .format(sys.argv[1], sys.argv[2], sys.argv[3]),
                            pool_pre_ping=True)
     Base.metadata.create_all(engine)
+    search_state = sys.argv[4]
 
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    states = session.query(State).filter(State.name.like('%a%'))
+    states = session.query(State).filter(State.name.like(search_state))
 
-    for state in states:
-        print("{}: {}".format(state.id, state.name))
+    if states is None:
+        print("Not found")
+    else:
+        print(states.id)
 
     session.close()
