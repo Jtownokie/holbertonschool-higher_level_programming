@@ -8,11 +8,12 @@ if __name__ == "__main__":
                          passwd=sys.argv[2], db=sys.argv[3])
     cursor = db.cursor()
 
-    cursor.execute("SELECT id, name FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+    cursor.execute("SELECT * FROM states ORDER BY id ASC")
     states = cursor.fetchall()
 
     for state in states:
-        print(state)
+        if state[1][0] == 'N':
+            print(state)
 
     cursor.close()
     db.close()
