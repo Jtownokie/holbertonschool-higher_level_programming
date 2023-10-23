@@ -12,7 +12,7 @@ if __name__ == "__main__":
 
     cursor.execute("""
         SELECT name FROM cities
-        WHERE state_id = 
+        WHERE state_id =
             (SELECT id
             FROM states
             WHERE name = %s)
@@ -20,7 +20,7 @@ if __name__ == "__main__":
     """, (state_input, ))
     cities = cursor.fetchall()
 
-    print(cities)
+    print(*cities, sep=", ")
 
     cursor.close()
     db.close()
