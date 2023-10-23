@@ -11,16 +11,16 @@ if __name__ == "__main__":
     state_input = sys.argv[4]
 
     cursor.execute("""
-        SELECT cities.name
-        FROM cities JOIN states
-        ON cities.state_id = states.id
-        WHERE states.name = %s
+        SELECT name FROM cities
+        WHERE state_id = 
+            (SELECT id
+            FROM states
+            WHERE name = %s)
         ORDER BY cities.id ASC
     """, (state_input, ))
     cities = cursor.fetchall()
 
-    for row in cities:
-        print(row)
+    print(cities)
 
     cursor.close()
     db.close()
