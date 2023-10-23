@@ -10,7 +10,7 @@ if __name__ == "__main__":
 
     state_input = sys.argv[4]
 
-    cursor.execute("SELECT * FROM states WHERE name = '%s' "
+    cursor.execute("SELECT * FROM states WHERE name = %s "
                    "ORDER BY id ASC", (state_input, ))
     states = cursor.fetchall()
 
