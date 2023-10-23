@@ -20,7 +20,9 @@ if __name__ == "__main__":
     """, (state_input, ))
     cities = cursor.fetchall()
 
-    print(*cities, sep=", ")
+    cities_list = [city[0] for city in cities]
+
+    print(*cities_list, sep=", ")
 
     cursor.close()
     db.close()
