@@ -1,5 +1,5 @@
 #!/usr/bin/node
-import { argv } from 'node:process';
+const { argv } = require('node:process');
 
 const squareSize = Number(argv[2]);
 
