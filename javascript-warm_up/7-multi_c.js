@@ -1,5 +1,5 @@
 #!/usr/bin/node
-const { argv } = require('node:process');
+const argv = process.argv;
 
 const numTimes = Number(argv[2]);
 
