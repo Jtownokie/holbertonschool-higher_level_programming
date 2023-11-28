@@ -1,7 +1,7 @@
 #!/usr/bin/node
-const Square = require('./5-square');
+const BaseSquare = require('./5-square');
 
-module.exports = class Square extends Square {
+module.exports = class Square extends BaseSquare {
   charPrint (c) {
     if (c) {
       for (let i = 0; i < this.height; i++) {
