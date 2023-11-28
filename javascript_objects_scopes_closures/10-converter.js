@@ -2,10 +2,14 @@
 
 exports.converter = function (base) {
   if (base === 10) {
-    const printBaseTen = (num) => num;
+    function printBaseTen (num) {
+      return (num);
+    }
     return (printBaseTen);
   } else {
-    const printOther = (num) => num.toString(base);
+    function printOther (num) {
+      return (num.toString(base));
+    }
     return (printOther);
   }
 };
