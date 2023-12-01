@@ -9,8 +9,10 @@ request(`${argv[2]}`, function (error, response, body) {
     const starWarsFilms = JSON.parse(body).results;
     let numTimes = 0;
     for (const film of starWarsFilms) {
-      if (film.characters.includes('https://swapi-api.hbtn.io/api/people/18/')) {
-        numTimes += 1;
+      for (const character of film.characters) {
+        if (character.includes('18')) {
+          numTimes += 1;
+        }
       }
     }
     console.log(numTimes);
